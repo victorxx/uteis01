@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta name="description" content="Calculadora simples para mercearias: calcule vendas de frutas com preço por quilo e quantidade. Fácil, rápida e gratuita!" />
+<meta name="keywords" content="calculadora de vendas, frutas, mercearia, preço por quilo, total de vendas, cálculo rápido" />
+<meta name="author" content="Sua Mercearia" />
+
+<!-- SEO: evita indexação de páginas duplicadas -->
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph para redes sociais (Facebook, LinkedIn, etc) -->
+<meta property="og:title" content="Calculadora de Vendas de Frutas para Mercearias" />
+<meta property="og:description" content="Use nossa calculadora simples para calcular o total das vendas de frutas baseado no preço por quilo e quantidade." />
+<meta property="og:type" content="website" />
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Calculadora de Vendas de Frutas para Mercearias" />
+<meta name="twitter:description" content="Use nossa calculadora simples para calcular o total das vendas de frutas baseado no preço por quilo e quantidade." />
+
+
+<!-- Definindo idioma -->
+<meta http-equiv="Content-Language" content="pt-BR" />
+
+<!-- Favicons (ícones do site) -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+
+  <title>Calculadora de Vendas de Frutas - Mercearia</title>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input:focus {
+      border-color: #28a745;
+      outline: none;
+      box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+    }
+
+    button {
+      padding: 12px;
+      background-color: #28a745;
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: #222;
+    }
+
+    .iframe-group {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .botao-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao-link:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Calculadora de Vendas de Frutas</h1>
+      <a href="https://uteis01.pages.dev/servicobancario" class="botao-link" target="_blank" rel="noopener noreferrer">CONFIRA ESSAS OPORTUNIDADES AQUI!</a>
+    <form id="fruitForm">
+      <label for="fruitName">Nome da Fruta:</label>
+      <input type="text" id="fruitName" name="fruitName" required />
+
+      <label for="price">Preço por Kg (R$):</label>
+      <input type="number" id="price" name="price" step="0.01" required />
+
+      <label for="quantity">Quantidade (Kg):</label>
+      <input type="number" id="quantity" name="quantity" step="0.01" required />
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <section id="result" aria-live="polite"></section>
+
+    <div class="iframe-group" aria-label="Links externos úteis">
+      <iframe src="https://modeloanuncio01.pages.dev/" height="250" title="Modelo de Anúncio"></iframe>
+      <iframe src="https://encurtadorko.pages.dev/" height="500" title="Encurtador de Links"></iframe>
+    </div>
+
+    <a href="https://uteis01.pages.dev/servicobancario" class="botao-link" target="_blank" rel="noopener noreferrer">CONFIRA ESSAS OPORTUNIDADES AQUI!</a>
+  </main>
+
+  <script>
+    document.getElementById("fruitForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const fruta = document.getElementById("fruitName").value.trim();
+      const preco = parseFloat(document.getElementById("price").value);
+      const quantidade = parseFloat(document.getElementById("quantity").value);
+      const total = preco * quantidade;
+
+      const resultado = document.getElementById("result");
+
+      if (fruta && !isNaN(total)) {
+        resultado.innerHTML = `Total para <strong>${fruta}</strong>: R$ ${total.toFixed(2)}`;
+      } else {
+        resultado.textContent = "Preencha todos os campos corretamente.";
+      }
+    });
+  </script>
+</body>
+</html>
