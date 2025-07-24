@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Previdência Privada | Engenheiro Civil</title>
+
+  <meta name="description" content="Calcule quanto um engenheiro civil precisa investir por mês para garantir uma aposentadoria tranquila. Planeje seu futuro com nossa calculadora de previdência privada." />
+  <meta name="keywords" content="engenheiro civil, previdência privada, calculadora aposentadoria, planejamento financeiro, investimento mensal, aposentadoria engenheiro, quanto investir por mês" />
+  <meta name="author" content="VictorSaib" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora de Previdência Privada para Engenheiro Civil" />
+  <meta property="og:description" content="Planeje sua aposentadoria com precisão. Descubra quanto investir mensalmente com nossa calculadora exclusiva para engenheiros civis." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Previdência para Engenheiro Civil" />
+  <meta name="twitter:description" content="Engenheiro civil? Descubra quanto investir para se aposentar tranquilo. Simples e rápido!" />
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #dddddd;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #555;
+      background-color: #2c2c2c;
+      color: #f1f1f1;
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .iframe-group {
+      margin-top: 30px;
+    }
+
+    .iframe-group iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .botao-link {
+      display: block;
+      text-align: center;
+      background-color: #28a745;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .botao-link:hover {
+      background-color: #218838;
+    }
+
+    #resultado {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 18px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Calculadora de Previdência Privada</h1>
+
+    <label for="valorFinal">Quanto deseja ter ao se aposentar? (R$)</label>
+    <input type="number" id="valorFinal" placeholder="Ex: 1500000" />
+
+    <label for="anos">Quantos anos faltam para se aposentar?</label>
+    <input type="number" id="anos" placeholder="Ex: 25" />
+
+    <label for="juros">Rentabilidade anual esperada (%)</label>
+    <input type="number" id="juros" placeholder="Ex: 8" />
+
+    <button onclick="calcular()">Calcular Investimento Mensal</button>
+
+    <div id="resultado"></div>
+
+    <div class="iframe-group">
+      <iframe src="https://modeloanuncio01.pages.dev/" height="250" title="Modelo Anúncio"></iframe>
+      <iframe src="https://encurtadorko.pages.dev/" height="500" title="Encurtador"></iframe>
+    </div>
+
+    <a href="http://www.espiritosanto-es.com.br/cloudflare" class="botao-link" target="_blank" rel="noopener noreferrer">
+      CONFERIR
+    </a>
+  </div>
+
+  <script>
+    function calcular() {
+      const valorFinal = parseFloat(document.getElementById('valorFinal').value);
+      const anos = parseInt(document.getElementById('anos').value);
+      const jurosAnual = parseFloat(document.getElementById('juros').value) / 100;
+
+      const resultado = document.getElementById('resultado');
+
+      if (isNaN(valorFinal) || isNaN(anos) || isNaN(jurosAnual) || valorFinal <= 0 || anos <= 0 || jurosAnual <= 0) {
+        resultado.innerHTML = "<span style='color:red;'>Por favor, preencha todos os campos com valores válidos.</span>";
+        return;
+      }
+
+      const meses = anos * 12;
+      const jurosMensal = Math.pow(1 + jurosAnual, 1 / 12) - 1;
+      const pagamentoMensal = valorFinal * jurosMensal / (Math.pow(1 + jurosMensal, meses) - 1);
+
+      resultado.innerHTML = `Você precisa investir aproximadamente:<br><strong>R$ ${pagamentoMensal.toFixed(2)} por mês</strong>`;
+    }
+  </script>
+
+</body>
+</html>
