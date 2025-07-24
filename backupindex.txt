@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="Calculadora de Gastos do Ciclo de Vida de Cachorro Pequeno" />
   <meta name="twitter:description" content="Calcule facilmente o custo total do seu cachorro pequeno. Alimentação, veterinário e mais." />
   <meta name="twitter:image" content="https://seudominio.com/imagens/cachorro-pequeno.jpg" />
-  <link rel="canonical" href="https://seudominio.com/calculadora-gastos-cachorro" />
+  
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <style>
