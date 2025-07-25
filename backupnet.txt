@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Título da página -->
+            <title>Hospedagem VPS e Servidores Dedicados com Alto Desempenho | SuaEmpresa</title>
+
+            <!-- Meta descrição para Google -->
+            <meta name="description" content="Hospede seu site com performance, segurança e suporte 24/7. VPS e servidores dedicados com SSD, IP dedicado e painel de controle fácil. Contrate agora!">
+
+            <!-- Palavras-chave (opcional) -->
+            <meta name="keywords" content="hospedagem VPS, servidor dedicado, hospedagem dedicada, servidores SSD, IP dedicado, cloud VPS, VPS Linux, hospedagem web, alta performance">
+
+            <!-- Instruções para robôs de busca -->
+            <meta name="robots" content="index, follow">
+
+            <!-- Responsividade -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- Open Graph para redes sociais -->
+            <meta property="og:title" content="Hospedagem VPS e Servidores Dedicados | SuaEmpresa">
+            <meta property="og:description" content="Servidores de alto desempenho com suporte 24/7. Escolha entre VPS escalável ou servidor dedicado confiável.">
+            <meta property="og:type" content="website">
+
+
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hospedagem VPS e Servidores Dedicados | SuaEmpresa">
+<meta name="twitter:description" content="Garanta alta performance para seu site ou aplicação com VPS e servidores dedicados. Contrate com suporte 24/7.">
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      color: #005a9c;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    select, input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #005a9c;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    .link-btn {
+      background-color: #28a745;
+    }
+
+    .link-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Compare Hospedagens VPS e Dedicados</h1>
+
+    <label for="empresas">Escolha uma empresa:</label>
+    <select id="empresas">
+      <option value="">-- Selecione --</option>
+      <option value="https://www.hostgator.com.br/">HostGator</option>
+
+    </select>
+
+    <button class="link-btn" onclick="abrirLink()">Acessar Site da Empresa</button>
+
+    <hr>
+
+    <h2>Ficou com dúvidas?</h2>
+    <form id="formulario" onsubmit="enviarWhatsApp(); return false;">
+      <label for="nome">Seu nome:</label>
+      <input type="text" id="nome" required>
+
+      <label for="duvida">Sua dúvida:</label>
+      <textarea id="duvida" rows="4" required></textarea>
+
+      <button type="submit">Enviar via WhatsApp</button>
+    </form>
+  </div>
+
+  <script>
+    function abrirLink() {
+      const select = document.getElementById("empresas");
+      const url = select.value;
+
+      if (url) {
+        window.open(url, "_blank");
+      } else {
+        alert("Por favor, selecione uma empresa.");
+      }
+    }
+
+    function enviarWhatsApp() {
+      const nome = document.getElementById("nome").value;
+      const duvida = document.getElementById("duvida").value;
+
+      const numero = "5527999860405"; // Substitua pelo seu número com DDD
+      const mensagem = `Olá, me chamo ${nome}. Tenho uma dúvida sobre hospedagens:\n\n${duvida}`;
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(link, "_blank");
+    }
+  </script>
+
+</body>
+</html>
