@@ -94,7 +94,7 @@
     <label for="empresas">Escolha uma empresa:</label>
     <select id="empresas">
       <option value="">-- Selecione --</option>
-      <option value="https://www.hostgator.com.br/">HostGator</option>
+      <option value="https://hostinger.com.br/?REFERRALCODE=1VICTOR444vps123">Hostinger</option>
 
     </select>
 
